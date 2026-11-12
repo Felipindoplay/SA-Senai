@@ -1,0 +1,75 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.jetbrains-mono{
+    font-family: "JetBrains Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: 80;
+    font-style: normal;
+  }
+  body{
+    background-color: #F0F2F5;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    line-height: 1.6;
+    font-family: "JetBrains Mono", monospace;
+    font-weight: 400;
+    color: #1d2125;
+    text-align: left;
+    background-color: #F0F2F5;
+}
+.btn {
+    display: inline-block;
+    background-color: #0f6cbf;
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    margin-top: 16px;
+   }
+   .btn:hover { background-color: #6cbfc7ec;}
+main.opcoes {
+    background-color: #FFFFFF;
+    width: 100%;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.04);
+    box-sizing: border-box;
+
+    gap: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 420px;
+    margin: 48px 32px;
+    padding: 32px;
+}
+main.opcoes h1 {
+    font-weight: 600;
+    color: #111111;
+    margin-bottom: 32px;
+}
+.btn_ini {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: #0f6cbf; 
+    color: #FFFFFF;
+    border: none;
+    border-radius: 8px; 
+    padding: 14px 16px; 
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+   }
