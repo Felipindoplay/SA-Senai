@@ -1,5 +1,6 @@
 const dataAtual = new Date().toLocaleDateString('pt-BR');
-let dataRetirada
+let dataRetirada;
+let dataFichaDefinida;
 let DADOS_INICIAIS = {
 alunos: [
     { cpf: '19283746501', nome: 'João Pereira', ficha: 0, },
@@ -15,30 +16,33 @@ alunos: [
     ],
   };
 function darFichas(){
-  if(dataRetirada == dataAtual){
+  if(dataRetirada == dataAtual || dataAtual == dataFichaDefinida){
     return console.log("Tentativa de Definição dupla!")
   }
   else{
-    let lista = DADOS_INICIAIS.alunos
+    let lista = DADOS_INICIAIS.alunos;
     for(let i = 0; i < lista.length; i++){
-      lista[i].ficha = 1
-    }
-    console.log("Fichas definidas com sucesso")
-    }
-  }
-function Retirar(cpfInput){
+      lista[i].ficha = 1;
+    };
+    dataFichaDefinida = dataAtual
+    console.log("Fichas definidas com sucesso");
+    };
+  };
+function Retirar(){
+  let Input = document.getElementById('cpfPlaced');
+  let cpfInput = Input.value
   if(dataRetirada == dataAtual){
-    return console.log("Tentativa de Retirada dupla!")
+    return console.log("Tentativa de Retirada dupla!");
   }
   else{
-    let lista = DADOS_INICIAIS.alunos
+    let lista = DADOS_INICIAIS.alunos;
     for(i = 0; i < lista.length; i++){
-      let cpf = lista[i].cpf
-      if(cpf == cpf && ficha == 1){
-        lista[i].ficha = 0
-        dataRetirada = dataAtual
-        console.log("Ficha Retirada com sucesso")
-      } 
-    }
-  }
-}
+      cpf = lista[i].cpf
+      if(cpfInput == cpf && lista[i].ficha == 1){
+        lista[i].ficha = 0;
+        dataRetirada = dataAtual;
+        console.log("Ficha Retirada com sucesso");
+      }
+    };
+  };
+};
