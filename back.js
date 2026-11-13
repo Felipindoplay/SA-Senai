@@ -1,5 +1,5 @@
 const dataAtual = new Date().toLocaleDateString('pt-BR');
-
+let dataRetirada
 let DADOS_INICIAIS = {
 alunos: [
     { cpf: '19283746501', nome: 'João Pereira', ficha: 0, usou_ficha: false },
@@ -14,3 +14,31 @@ alunos: [
     { cpf: '66677788899', nome: 'Camila Rocha', ficha: 0, usou_ficha: false }
     ],
   };
+function editarBanco(operacao, banco){
+  if(operacao == 1){
+    //Editar Banco
+    localStorage.setItem('banco', JSON.stringify(banco));
+  }
+  else{
+    //caso banco não exista, cria ele
+    if (localStorage.getItem('banco') === null) {
+      editarBanco(1, DADOS_INICIAIS);
+    }
+    //Ler Banco
+    return JSON.parse(localStorage.getItem('banco'));
+  } 
+}
+function darFichas(){
+  if(dataRetirada == dataAtual){
+    return null
+  }
+  else{
+    let banco = editarBanco(2, )
+    function buscarPorId(lista, id) {
+      for (let i = 0; i < lista.length; i++) {
+        if (lista[i].id == id) return lista[i];
+      }
+      return null;
+    }
+    }
+  }
