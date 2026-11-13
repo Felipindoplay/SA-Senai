@@ -14,7 +14,7 @@ alunos: [
     { cpf: '66677788899', nome: 'Camila Rocha', ficha: 0, usou_ficha: false }
     ],
   };
-function editarBanco(operacao, banco){
+function ManipularBanco(operacao, banco){
   if(operacao == 1){
     //Editar Banco
     localStorage.setItem('banco', JSON.stringify(banco));
@@ -33,12 +33,9 @@ function darFichas(){
     return null
   }
   else{
-    let banco = editarBanco(2, )
-    function buscarPorId(lista, id) {
-      for (let i = 0; i < lista.length; i++) {
-        if (lista[i].id == id) return lista[i];
-      }
-      return null;
+    let lista
+    for(let i = 0; i < lista.length; i++){
+
     }
     }
   }
