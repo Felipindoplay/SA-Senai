@@ -20,7 +20,8 @@ function darFichas(){
     return console.log("Tentativa de Definição dupla!")
   }
   else{
-    let lista = DADOS_INICIAIS.alunos;
+    let banco = helpFuncs(1, )
+    let lista = banco.alunos;
     for(let i = 0; i < lista.length; i++){
       lista[i].ficha = 1;
     };
@@ -35,7 +36,8 @@ function Retirar(){
     return console.log("Tentativa de Retirada dupla!");
   }
   else{
-    let lista = DADOS_INICIAIS.alunos;
+    let banco = helpFuncs(1, )
+    let lista = banco.alunos;
     for(i = 0; i < lista.length; i++){
       cpf = lista[i].cpf
       if(cpfInput == cpf && lista[i].ficha == 1){
@@ -46,3 +48,12 @@ function Retirar(){
     };
   };
 };
+function helpFuncs(funcID, addInfo1, addInfo2){
+  if(funcID==1){
+    if (localStorage.getItem('banco') === null) {
+      helpFuncs(2, DADOS_INICIAIS);
+    }
+    return JSON.parse(localStorage.getItem('banco'));
+  }
+  if(funcID==2){localStorage.setItem('banco', JSON.stringify(addInfo1));}
+}

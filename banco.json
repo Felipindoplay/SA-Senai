@@ -1,0 +1,14 @@
+{
+    "alunos": [
+      { "cpf": "19283746501", "nome": "João Pereira", "ficha": 0 },
+      { "cpf": "98765432109", "nome": "Maria Schmitt", "ficha": 0 },
+      { "cpf": "12345678912", "nome": "Pedro Souza", "ficha": 0 },
+      { "cpf": "55566677788", "nome": "Ana Clara", "ficha": 0 },
+      { "cpf": "99988877766", "nome": "Lucas Martins", "ficha": 0 },
+      { "cpf": "11122233344", "nome": "Juliana Costa", "ficha": 0 },
+      { "cpf": "44455566677", "nome": "Carlos Eduardo", "ficha": 0 },
+      { "cpf": "88899900011", "nome": "Fernanda Lima", "ficha": 0 },
+      { "cpf": "22233344455", "nome": "Roberto Alves", "ficha": 0 },
+      { "cpf": "66677788899", "nome": "Camila Rocha", "ficha": 0 }
+    ]
+  }
