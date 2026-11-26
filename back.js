@@ -48,12 +48,14 @@ function Retirar(){
     };
   };
 };
-function helpFuncs(funcID, addInfo1, addInfo2){
-  if(funcID==1){
-    if (localStorage.getItem('banco') === null) {
-      helpFuncs(2, DADOS_INICIAIS);
-    }
-    return JSON.parse(localStorage.getItem('banco'));
+function lerBanco() {
+  // Na primeira vez ainda não tem nada salvo: grava os dados iniciais
+  if (localStorage.getItem('banco') === null) {
+    gravarBanco(DADOS_INICIAIS);
   }
-  if(funcID==2){localStorage.setItem('banco', JSON.stringify(addInfo1));}
+  return JSON.parse(localStorage.getItem('banco'));
+}
+
+function gravarBanco(banco) {
+  localStorage.setItem('banco', JSON.stringify(banco));
 }
