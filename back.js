@@ -48,6 +48,7 @@ function Retirar(){
         gravarBanco(banco)
         console.log("Ficha Retirada com sucesso");
       }
+      return(console.log("Aluno sem Ficha"))
     }
   }
   console.log("Cpf Inválido")
