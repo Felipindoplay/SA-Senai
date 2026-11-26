@@ -1,7 +1,9 @@
+//Variaveis
 const dataAtual = new Date().toLocaleDateString('pt-BR');
 let dataRetirada;
 let dataFichaDefinida;
 let DADOS_INICIAIS = {
+  //Banco de Dados
 alunos: [
     { cpf: '19283746501', nome: 'João Pereira', ficha: 0, },
     { cpf: '98765432109', nome: 'Maria Schmitt', ficha: 0, },
@@ -16,10 +18,7 @@ alunos: [
     ],
   };
 function darFichas(){
-  if(dataRetirada == dataAtual || dataAtual == dataFichaDefinida){
-    return console.log("Tentativa de Definição dupla!")
-  }
-  else{
+  verificacao(1, dataRetirada, dataAtual, dataAtual, dataFichaDefinida, "Tentativa de Definição Dupla!")
     let banco = helpFuncs(1, )
     let lista = banco.alunos;
     for(let i = 0; i < lista.length; i++){
@@ -28,14 +27,10 @@ function darFichas(){
     dataFichaDefinida = dataAtual
     console.log("Fichas definidas com sucesso");
     };
-  };
 function Retirar(){
   let Input = document.getElementById('cpfPlaced');
   let cpfInput = Input.value
-  if(dataRetirada == dataAtual){
-    return console.log("Tentativa de Retirada dupla!");
-  }
-  else{
+  verificacao(1, dataRetirada, dataAtual, 0, 1, "Tentativa de Retirada dupla!")
     let banco = helpFuncs(1, )
     let lista = banco.alunos;
     for(i = 0; i < lista.length; i++){
@@ -47,15 +42,17 @@ function Retirar(){
       }
     };
   };
-};
+function verificacao(Modo, V1, V2, V3, V4, R) {
+  //Modo = Modo que vai ser utilizado. V1 - V4 = Valores a serem Utilizados. R = Mensagem do Return
+  if(Modo==1){
+    if(V1 == V2 || V3 == V4){return console.log(`${R}`)}}
+}
 function lerBanco() {
-  // Na primeira vez ainda não tem nada salvo: grava os dados iniciais
   if (localStorage.getItem('banco') === null) {
     gravarBanco(DADOS_INICIAIS);
   }
   return JSON.parse(localStorage.getItem('banco'));
 }
-
 function gravarBanco(banco) {
   localStorage.setItem('banco', JSON.stringify(banco));
 }
