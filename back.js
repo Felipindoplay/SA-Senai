@@ -2,13 +2,12 @@
 const dataAtual = new Date().toLocaleDateString('pt-BR');
 let dataRetirada;
 let dataFichaDefinida;
-let banco = lerBanco()
-let Alunos = banco.alunos
+let R;
 let DADOS_INICIAIS = {
   //Banco de Dados
 alunos: [
     { cpf: '19283746501', nome: 'João Pereira', ficha: 0, },
-    { cpf: '98765432109', nome: 'Maria Schmitt', ficha: 0, },
+    { cpf: '98765432109', nome: 'Maria Schmitt', ficha: 1, },
     { cpf: '12345678912', nome: 'Pedro Souza', ficha: 0, },
     { cpf: '55566677788', nome: 'Ana Clara', ficha: 0, },
     { cpf: '99988877766', nome: 'Lucas Martins', ficha: 0, },
@@ -19,32 +18,44 @@ alunos: [
     { cpf: '66677788899', nome: 'Camila Rocha', ficha: 0, }
     ],
   };
+let banco = lerBanco()
+let Alunos = banco.alunos
+//Função dar Ficha
 function darFichas(){
-  verificacao(1, dataRetirada, dataAtual, dataAtual, dataFichaDefinida, "Tentativa de Definição Dupla!")
-    for(let index = 0; index < Alunos.length; index++){
-      alunos[index].ficha = 1;
-    };
+  verificacao(1, dataRetirada, dataAtual, dataAtual, dataFichaDefinida)
+  if(R == true){return console.log("Tentativa de Definição Dupla!")}
+  for(let index = 0; index < Alunos.length; index++){
+    lerBanco()
+    Alunos[index].ficha = 1
+  };
     dataFichaDefinida = dataAtual
     console.log("Fichas definidas com sucesso");
     };
+//função Retirar
 function Retirar(){
-  let Input = document.getElementById('cpfPlaced');
-  let cpfInput = Input.value
-  verificacao(1, dataRetirada, dataAtual, 0, 1, "Tentativa de Retirada dupla!")
-    for(i = 0; i < lista.length; i++){
-      cpf = lista[i].cpf
-      if(cpfInput == cpf && lista[i].ficha == 1){
-        lista[i].ficha = 0;
-        dataRetirada = dataAtual;
-        console.log("Ficha Retirada com sucesso");
-      }
-    };
+  //variaveis
+  event.preventDefault()//interrompe recarregamento
+  let Input = document.getElementById('cpfPlaced').value
+  //verificação
+  verificacao(1, dataRetirada, dataAtual, 0, 1)
+  if(R == 1){return console.log("Tentativa de Retirada dupla!")}
+  for(let index = 0; index < Alunos.length; index++){
+    cpf = Alunos[index].cpf
+    if(Input == cpf && Alunos[index] == 1){
+      Alunos[index].ficha = 0;
+      dataRetirada = dataAtual;
+      console.log("Ficha Retirada com sucesso");
+    }
+    console.log(Input, cpf, Alunos[index], 1)
   };
+};
 // Funções
-function verificacao(Modo, V1, V2, V3, V4, R) {
+function verificacao(Modo, V1, V2, V3, V4) {
   //Modo = Modo que vai ser utilizado. V1 - V4 = Valores a serem Utilizados. R = Mensagem do Return
   if(Modo==1){
-    if(V1 == V2 || V3 == V4){return console.log(`${R}`)}}
+    if(V1 == V2 || V3 == V4){R = true}}
+  if(Modo==2)
+    {if(V1 == V2 && V3 == V4){R = true}}
 }
 function lerBanco() {
   if (localStorage.getItem('banco') === null) {gravarBanco(DADOS_INICIAIS);}
