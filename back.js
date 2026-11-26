@@ -65,3 +65,5 @@ function lerBanco() {
 }
 
 function gravarBanco(banco) {localStorage.setItem('banco', JSON.stringify(banco));}
+
+function resetBanco() {localStorage.setItem('banco', JSON.stringify(DADOS_INICIAIS));}

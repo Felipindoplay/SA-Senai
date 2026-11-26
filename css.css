@@ -9,7 +9,7 @@
     font-weight: 80;
     font-style: normal;
   }
-  body{
+body{
     background-color: #F0F2F5;
     min-height: 100vh;
     display: flex;
@@ -24,17 +24,17 @@
     background-color: #F0F2F5;
 }
 .btn {
-    display: inline-block;
+    display: flex;
     background-color: #0f6cbf;
     color: #fff;
     border: none;
     padding: 12px 24px;
     border-radius: 8px;
-    font-size: 16px;
-    font-family: inherit;
     text-decoration: none;
     cursor: pointer;
     margin-top: 16px;
+    align-items: center;
+    justify-content: center;
    }
    .btn:hover { background-color: #6cbfc7ec;}
 main.opcoes {
@@ -73,3 +73,6 @@ main.opcoes h1 {
     cursor: pointer;
     transition: background-color 0.2s ease-in-out;
    }
+p {
+    font-family: "JetBrains Mono", monospace;
+}
