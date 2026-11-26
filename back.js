@@ -7,7 +7,7 @@ let DADOS_INICIAIS = {
   //Banco de Dados
 alunos: [
     { cpf: '19283746501', nome: 'João Pereira', ficha: 0, },
-    { cpf: '98765432109', nome: 'Maria Schmitt', ficha: 1, },
+    { cpf: '98765432109', nome: 'Maria Schmitt', ficha: 0, },
     { cpf: '12345678912', nome: 'Pedro Souza', ficha: 0, },
     { cpf: '55566677788', nome: 'Ana Clara', ficha: 0, },
     { cpf: '99988877766', nome: 'Lucas Martins', ficha: 0, },
