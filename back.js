@@ -41,13 +41,16 @@ function Retirar(){
   if(dataRetirada == dataAtual){return console.log("Tentativa de Retirada dupla!")}
   for(let index = 0; index < Alunos.length; index++){
     cpf = Alunos[index].cpf
-    if(Input == cpf && Alunos[index].ficha == 1){
-      Alunos[index].ficha = 0;
-      dataRetirada = dataAtual;
-      gravarBanco(banco)
-      console.log("Ficha Retirada com sucesso");
+    if(Input == cpf){
+      if(Alunos[index].ficha == 1){
+        Alunos[index].ficha = 0;
+        dataRetirada = dataAtual;
+        gravarBanco(banco)
+        console.log("Ficha Retirada com sucesso");
+      }
     }
-  };
+  }
+  console.log("Cpf Inválido")
 };
 // Funções
 function verificacao(Modo, V1, V2, V3, V4) {
